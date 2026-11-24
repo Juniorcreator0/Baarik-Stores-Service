@@ -417,6 +417,7 @@
   // ===== الإعدادات — عدّل هنا =====
   const WHATSAPP_NUMBER = "97439986483";            // رقم الواتساب بالصيغة الدولية بدون +
   const OFFER_END = "2026-11-30T23:59:59+03:00";    // نهاية العرض بتوقيت الدوحة
+  const SHEET_URL = "https://script.google.com/macros/s/AKfycbwPHG4KeuK9zhdZ8TpsVPASuW5zhk6PyceAIAZir3oXa6Wqs51xHRxU3gsC3xwwLvmZ/exec"; // Google Apps Script لتسجيل الطلبات في الشيت
   // ================================
 
   const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
@@ -443,6 +444,10 @@
   document.getElementById('orderForm').addEventListener('submit', e => {
     e.preventDefault();
     const f = e.target;
+    try {
+      fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true,
+        body: new URLSearchParams({ name: f.name.value, phone: '+974' + f.phone.value, type: f.type.value, source: location.hostname }) });
+    } catch (_) {}
     const msg = `السلام عليكم، أبي أحجز عرض المتجر الإلكتروني بـ 600 ريال\nالاسم: ${f.name.value}\nالجوال: +974${f.phone.value}\nنوع النشاط: ${f.type.value}`;
     window.open(waLink(msg), '_blank');
   });
