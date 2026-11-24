@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بارك | متجرك الإلكتروني الاحترافي في قطر — عرض الجمعة البيضاء</title>
-<meta name="description" content="متجر إلكتروني احترافي مصمم خصيصاً لك، متجاوب مع كل الأجهزة، مربوط بوسائل دفع متعددة، وملكك مدى الحياة. عرض الجمعة البيضاء: 600 ريال بدل 999.">
+<title>بارك | امتلك متجر ملكك للأبد بدون اشتراكات شهرية — عرض الجمعة البيضاء</title>
+<meta name="description" content="متجر إلكتروني احترافي ملكك للأبد بدون اشتراكات شهرية. تصميم مخصص، وسائل دفع متعددة، وتسليم خلال 48 ساعة. عرض الجمعة البيضاء: 600 ريال بدل 999.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -24,16 +24,16 @@
   html{scroll-behavior:smooth}
   body{font-family:'Tajawal',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
   .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
 
-  /* Top promo bar */
   .promo-bar{background:var(--maroon);color:#fff;text-align:center;padding:10px 16px;font-weight:700;font-size:15px}
   .promo-bar span{color:var(--gold)}
 
-  /* Header */
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
   .logo{font-weight:900;font-size:22px;color:var(--maroon);display:flex;align-items:center;gap:8px}
+  .logo small{font-size:14px;font-weight:700;color:var(--muted)}
   .logo i{display:inline-block;width:30px;height:30px;border-radius:9px;background:var(--maroon);position:relative}
   .logo i::after{content:"";position:absolute;inset:8px;border:2.5px solid #fff;border-top:0;border-radius:0 0 6px 6px}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;font-weight:800;border:0;cursor:pointer;border-radius:999px;transition:transform .15s,box-shadow .15s,background .15s}
@@ -51,8 +51,9 @@
   .tag{display:inline-flex;align-items:center;gap:8px;background:var(--maroon-soft);color:var(--maroon);font-weight:800;font-size:14px;padding:7px 16px;border-radius:999px;margin-bottom:18px}
   .tag b{width:8px;height:8px;border-radius:50%;background:var(--maroon);animation:pulse 1.4s infinite}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-  h1{font-size:clamp(32px,5vw,54px);line-height:1.25;font-weight:900;margin-bottom:18px}
+  h1{font-size:clamp(32px,5vw,54px);line-height:1.3;font-weight:900;margin-bottom:18px}
   h1 em{font-style:normal;color:var(--maroon)}
+  h1 .sub{display:block;font-size:.62em;color:var(--ink);font-weight:800;margin-top:6px}
   .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);margin-bottom:28px;max-width:560px}
   .price-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:28px}
   .price-now{font-size:46px;font-weight:900;color:var(--maroon);line-height:1}
@@ -63,14 +64,11 @@
   .trust{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap;color:var(--muted);font-size:15px;font-weight:500}
   .trust span::before{content:"✓";color:var(--maroon);font-weight:900;margin-left:6px}
 
-  /* Hero visual */
   .visual{position:relative;display:flex;justify-content:center}
   .device{width:100%;max-width:400px;background:#fff;border-radius:26px;border:1px solid var(--line);box-shadow:0 40px 80px -30px rgba(94,14,38,.35);overflow:hidden}
   .device-top{display:flex;gap:6px;padding:14px 16px;border-bottom:1px solid var(--line)}
   .device-top i{width:10px;height:10px;border-radius:50%;background:var(--line)}
-  .store-head{background:var(--maroon);color:#fff;padding:20px;display:flex;justify-content:space-between;align-items:center}
-  .store-head strong{font-size:18px}
-  .store-head span{font-size:13px;opacity:.85}
+  .store-head{background:var(--maroon);color:#fff;padding:20px;font-size:18px;font-weight:800}
   .products{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
   .prod{border:1px solid var(--line);border-radius:14px;padding:10px}
   .prod .img{height:80px;border-radius:10px;margin-bottom:8px}
@@ -80,19 +78,38 @@
   .prod:nth-child(4) .img{background:linear-gradient(135deg,#E2EFE7,#B9D9C6)}
   .prod .l1{height:8px;width:70%;background:var(--line);border-radius:4px;margin-bottom:6px}
   .prod .l2{height:8px;width:40%;background:var(--maroon-soft);border-radius:4px}
-  .pay-strip{display:flex;gap:8px;justify-content:center;padding:0 16px 18px;flex-wrap:wrap}
-  .pay-strip span{font-size:12px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:var(--muted)}
-  .badge40{position:absolute;top:-18px;left:0;width:118px;height:118px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 16px 30px -10px rgba(138,21,56,.6);transform:rotate(-12deg);border:4px solid #fff;outline:3px dashed var(--gold);outline-offset:-12px}
+  .pay-strip{display:flex;justify-content:center;padding:0 16px 18px}
+  .pay-strip span{font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:10px;padding:6px 14px;color:var(--muted)}
+  .badge40{position:absolute;top:-26px;left:-14px;width:118px;height:118px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 16px 30px -10px rgba(138,21,56,.6);transform:rotate(-12deg);border:4px solid #fff;outline:3px dashed var(--gold);outline-offset:-12px;z-index:2}
   .badge40 b{font-size:36px;font-weight:900;line-height:1}
   .badge40 small{font-size:14px;font-weight:800;color:var(--gold)}
 
-  /* Sections */
   section{padding:80px 0}
+  .alt{background:#FBF8F9}
   .sec-head{text-align:center;max-width:680px;margin:0 auto 48px}
-  .sec-head .eyebrow{color:var(--maroon);font-weight:800;font-size:15px;margin-bottom:8px;display:block}
+  .eyebrow{color:var(--maroon);font-weight:800;font-size:15px;margin-bottom:8px;display:block}
   h2{font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.35;margin-bottom:12px}
   .sec-head p{color:var(--muted);font-size:18px}
 
+  /* Compare */
+  .compare{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(94,14,38,.3)}
+  .compare table{width:100%;border-collapse:collapse;font-size:16px}
+  .compare th,.compare td{padding:16px 18px;text-align:center;border-bottom:1px solid var(--line)}
+  .compare th{background:#FBF8F9;font-weight:800;font-size:15px;color:var(--muted)}
+  .compare td:first-child,.compare th:first-child{text-align:right}
+  .compare td:first-child b{display:block;font-size:17px}
+  .compare td:first-child small{color:var(--muted);font-size:13px}
+  .compare .cost{font-weight:800;color:#B42318}
+  .compare tr.us td{background:var(--maroon);color:#fff;border-bottom:0}
+  .compare tr.us td:first-child small{color:#F3D9E0}
+  .compare tr.us .cost{color:var(--gold);font-size:19px}
+  .save-box{max-width:900px;margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#FBF6E6;border:1px dashed var(--gold);border-radius:18px;padding:18px 24px}
+  .save-box p{font-size:19px;font-weight:800}
+  .save-box p span{color:var(--maroon)}
+  .note{max-width:900px;margin:12px auto 0;color:var(--muted);font-size:13px;text-align:center}
+  .table-scroll{overflow-x:auto}
+
+  /* Features */
   .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .feat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;transition:border-color .2s,transform .2s,box-shadow .2s}
   .feat:hover{border-color:var(--maroon);transform:translateY(-4px);box-shadow:0 20px 40px -24px rgba(138,21,56,.4)}
@@ -101,8 +118,18 @@
   .feat h3{font-size:20px;font-weight:800;margin-bottom:8px}
   .feat p{color:var(--muted);font-size:16px}
 
+  /* Portfolio */
+  .works{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .work{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column}
+  .work:hover{transform:translateY(-4px);border-color:var(--maroon);box-shadow:0 20px 40px -24px rgba(138,21,56,.4)}
+  .work .thumb{height:150px;background:#FBF8F9;display:flex;align-items:center;justify-content:center;padding:18px;border-bottom:1px solid var(--line)}
+  .work .thumb img{max-height:110px;object-fit:contain}
+  .work .info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .work h3{font-size:17px;font-weight:800}
+  .work .go{color:var(--maroon);font-weight:800;font-size:14px;white-space:nowrap}
+  .work .qa{position:absolute;top:10px;right:10px;background:var(--maroon);color:#fff;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
+
   /* Steps */
-  .steps-bg{background:#FBF8F9}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:s}
   .step{position:relative;background:#fff;border-radius:var(--radius);padding:30px 24px;border:1px solid var(--line)}
   .step::before{counter-increment:s;content:counter(s);position:absolute;top:-18px;right:24px;width:40px;height:40px;border-radius:12px;background:var(--maroon);color:#fff;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center}
@@ -114,21 +141,22 @@
   .offer::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;border:60px solid rgba(255,255,255,.05);left:-120px;bottom:-160px}
   .offer h2{color:#fff}
   .offer .eyebrow{color:var(--gold)}
-  .offer ul{list-style:none;margin:20px 0 0}
+  .offer .incl{margin-top:20px;font-weight:800;color:var(--gold)}
+  .offer ul{list-style:none;margin:8px 0 0}
   .offer li{padding:6px 0;font-size:17px}
   .offer li::before{content:"✓";color:var(--gold);font-weight:900;margin-left:10px}
   .offer-card{background:#fff;color:var(--ink);border-radius:22px;padding:30px;text-align:center;position:relative;z-index:1}
   .offer-card .old{color:var(--muted);text-decoration:line-through;font-size:20px}
   .offer-card .now{font-size:56px;font-weight:900;color:var(--maroon);line-height:1.1}
   .offer-card .now small{font-size:20px}
-  .offer-card .note{color:var(--muted);font-size:14px;margin:6px 0 18px}
+  .offer-card .pnote{color:var(--muted);font-size:14px;margin:6px 0 18px}
   .countdown{display:flex;justify-content:center;gap:10px;margin-bottom:20px;direction:ltr}
   .cd{background:var(--maroon-soft);border-radius:12px;min-width:62px;padding:8px 4px}
   .cd b{display:block;font-size:24px;font-weight:900;color:var(--maroon);line-height:1.2}
   .cd small{font-size:12px;color:var(--muted);font-weight:700}
   .offer-card .btn{width:100%}
 
-  /* Order form */
+  /* Form */
   .form-box{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px;box-shadow:0 30px 60px -40px rgba(94,14,38,.35)}
   .field{margin-bottom:16px}
   .field label{display:block;font-weight:700;margin-bottom:6px;font-size:15px}
@@ -139,6 +167,12 @@
   .phone-wrap input{text-align:left}
   .form-box .btn{width:100%;margin-top:8px}
   .form-note{text-align:center;color:var(--muted);font-size:14px;margin-top:12px}
+  .thanks{display:none;text-align:center;padding:10px 0}
+  .thanks .ok{width:64px;height:64px;border-radius:50%;background:var(--maroon-soft);color:var(--maroon);font-size:32px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+  .thanks h3{font-size:24px;font-weight:900;margin-bottom:6px}
+  .thanks p{color:var(--muted);margin-bottom:18px}
+  .form-box.done form{display:none}
+  .form-box.done .thanks{display:block}
 
   /* FAQ */
   .faq{max-width:780px;margin:0 auto}
@@ -150,36 +184,36 @@
   details[open] summary::after{transform:rotate(45deg)}
   details p{color:var(--muted);margin-top:10px}
 
-  /* Final CTA */
   .final{text-align:center;padding:72px 0;background:var(--maroon-soft)}
   .final p{color:var(--muted);font-size:18px;margin-bottom:26px}
-
   footer{text-align:center;padding:28px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 
-  /* Floating WhatsApp */
   .wa-float{position:fixed;bottom:22px;left:22px;z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -8px rgba(37,211,102,.7)}
   .wa-float svg{width:32px;height:32px;fill:#fff}
-
-  /* Mobile sticky bar */
   .m-bar{display:none}
 
   @media (max-width:960px){
     .hero-grid,.offer{grid-template-columns:1fr}
     .visual{order:-1;margin-top:20px}
-    .features{grid-template-columns:1fr 1fr}
+    .features,.works{grid-template-columns:1fr 1fr}
     .steps{grid-template-columns:1fr;gap:34px}
   }
   @media (max-width:600px){
     section{padding:60px 0}
     .hero{padding:36px 0 56px}
     .features{grid-template-columns:1fr}
-    .nav .btn{display:none}
-    .logo small{display:none}
+    .works{gap:12px}
+    .work .thumb{height:110px}
+    .work .info{flex-direction:column;align-items:flex-start}
+    .nav .btn,.logo small{display:none}
     .offer{padding:36px 22px}
     .form-box{padding:24px}
-    .badge40{width:96px;height:96px}
-    .badge40 b{font-size:28px}
+    .badge40{width:92px;height:92px;left:-4px;top:-20px}
+    .badge40 b{font-size:27px}
     .cta-row .btn{flex:1}
+    .compare th,.compare td{padding:12px 10px;font-size:14px}
+    .compare td:first-child b{font-size:15px}
+    .save-box{justify-content:center;text-align:center}
     .wa-float{bottom:86px}
     .m-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:55;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;align-items:center;justify-content:space-between}
     .m-bar .p{font-weight:900;color:var(--maroon);font-size:20px;line-height:1.1}
@@ -190,11 +224,11 @@
 </head>
 <body>
 
-<div class="promo-bar">🔥 عرض الجمعة البيضاء: خصم <span>40%</span> على متجرك الإلكتروني — لفترة محدودة</div>
+<div class="promo-bar">🔥 عرض الجمعة البيضاء: خصم <span>40%</span> لفترة محدودة</div>
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo"><i></i>بارك <small style="font-size:14px;font-weight:700;color:var(--muted)">| تصميم المتاجر الإلكترونية</small></a>
+    <a href="#" class="logo"><i></i>بارك <small>| تصميم المتاجر الإلكترونية</small></a>
     <a href="#order" class="btn btn-primary btn-sm">احجز متجرك الحين</a>
   </div>
 </header>
@@ -204,8 +238,8 @@
   <div class="wrap hero-grid">
     <div>
       <div class="tag"><b></b>عرض الجمعة البيضاء ساري الحين</div>
-      <h1>متجرك الإلكتروني <em>الاحترافي</em><br>جاهز يبيع عنك في قطر</h1>
-      <p class="lead">نصمم لك متجر إلكتروني مخصص لنشاطك، يشتغل على كل الأجهزة، مربوط بوسائل دفع متعددة، ويكون ملكك مدى الحياة.</p>
+      <h1>امتلك متجر <em>ملكك للأبد</em><span class="sub">بدون اشتراكات شهرية</span></h1>
+      <p class="lead">متجر إلكتروني احترافي بتصميم مخصص لنشاطك، يشتغل بسلاسة على الجوال والكمبيوتر، ويستقبل طلبات عملائك من أول يوم.</p>
       <div class="price-row">
         <div class="price-now">600 <small>ر.ق</small></div>
         <div class="price-old">999 ر.ق</div>
@@ -216,8 +250,7 @@
         <a href="#" class="btn btn-ghost js-wa">كلمنا واتساب</a>
       </div>
       <div class="trust">
-        <span>بدون اشتراك شهري</span>
-        <span>ملكك مدى الحياة</span>
+        <span>تسليم خلال 48 ساعة</span>
         <span>دعم فني بالعربي</span>
       </div>
     </div>
@@ -226,16 +259,48 @@
       <div class="badge40"><b>40%</b><small>خصم</small></div>
       <div class="device">
         <div class="device-top"><i></i><i></i><i></i></div>
-        <div class="store-head"><strong>متجرك مع بارك</strong><span>🛒 السلة (2)</span></div>
+        <div class="store-head">متجرك مع بارك</div>
         <div class="products">
           <div class="prod"><div class="img"></div><div class="l1"></div><div class="l2"></div></div>
           <div class="prod"><div class="img"></div><div class="l1"></div><div class="l2"></div></div>
           <div class="prod"><div class="img"></div><div class="l1"></div><div class="l2"></div></div>
           <div class="prod"><div class="img"></div><div class="l1"></div><div class="l2"></div></div>
         </div>
-        <div class="pay-strip"><span>Visa</span><span>Mastercard</span><span>Apple Pay</span><span>الدفع عند الاستلام</span></div>
+        <div class="pay-strip"><span>💳 وسائل دفع متعددة</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="alt" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">قارن بنفسك</span>
+      <h2>كم بتدفع للمنصات خلال 3 سنين؟</h2>
+      <p>المنصات المشهورة تحاسبك كل شهر طول ما متجرك شغّال، ومع بارك تدفع مرة وحدة وبس.</p>
+    </div>
+    <div class="compare">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr><th>المنصة</th><th>الاشتراك</th><th>خلال سنة</th><th>خلال 3 سنين</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Shopify</b><small>باقة Basic</small></td><td>≈ 87 ر.ق / شهر</td><td class="cost">≈ 1,050 ر.ق</td><td class="cost">≈ 3,150 ر.ق</td></tr>
+            <tr><td><b>Wix</b><small>باقة Core</small></td><td>≈ 106 ر.ق / شهر</td><td class="cost">≈ 1,270 ر.ق</td><td class="cost">≈ 3,800 ر.ق</td></tr>
+            <tr><td><b>زد Zid</b><small>باقة Lite</small></td><td>≈ 96 ر.ق / شهر</td><td class="cost">≈ 1,150 ر.ق</td><td class="cost">≈ 3,460 ر.ق</td></tr>
+            <tr><td><b>سلة Salla</b><small>باقة سلة بلس</small></td><td>≈ 960 ر.ق / سنة</td><td class="cost">≈ 960 ر.ق</td><td class="cost">≈ 2,880 ر.ق</td></tr>
+            <tr class="us"><td><b>بارك</b><small>عرض الجمعة البيضاء</small></td><td>600 ر.ق مرة وحدة</td><td class="cost">600 ر.ق</td><td class="cost">600 ر.ق</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="save-box">
+      <p>توفّر <span>أكثر من 2,000 ريال</span> خلال 3 سنين، وكل سنة بعدها تكلفتها صفر.</p>
+      <a href="#order" class="btn btn-primary btn-sm">احجز بسعر العرض</a>
+    </div>
+    <p class="note">* أسعار تقريبية محوّلة للريال القطري من الباقات المعلنة على مواقع المنصات الرسمية (نوفمبر 2026)، وقد تختلف حسب الدولة ونوع الاشتراك، ولا تشمل عمولات المعاملات أو التطبيقات الإضافية.</p>
   </div>
 </section>
 
@@ -243,70 +308,91 @@
 <section id="features">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">ليش تختار متجرنا؟</span>
+      <span class="eyebrow">إيش تاخذ مع متجرك؟</span>
       <h2>كل اللي تحتاجه عشان تبدأ تبيع أونلاين</h2>
-      <p>متجر متكامل من أول يوم، وأنت بس تركّز على منتجاتك وعملائك.</p>
     </div>
     <div class="features">
       <div class="feat">
         <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div>
-        <h3>متجر احترافي مخصص لك</h3>
-        <p>تصميم يعكس هوية نشاطك وألوان علامتك، مو قالب مكرر.</p>
+        <h3>تصميم مخصص لهويتك</h3>
+        <p>متجر بألوان علامتك وشكل يناسب نشاطك، مو قالب مكرر.</p>
       </div>
       <div class="feat">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="14" height="10" rx="2"/><rect x="16" y="8" width="6" height="12" rx="1.5"/><path d="M6 18h6"/></svg></div>
         <h3>متجاوب مع جميع الأجهزة</h3>
-        <p>يشتغل بسلاسة على الجوال والتابلت واللابتوب، لأن أغلب عملائك يشترون من الجوال.</p>
+        <p>تجربة شراء سلسة على الجوال والتابلت واللابتوب، لأن أغلب عملائك يطلبون من الجوال.</p>
       </div>
       <div class="feat">
         <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></div>
         <h3>وسائل دفع متعددة</h3>
-        <p>مربوط ببطاقات الائتمان وآبل باي والدفع عند الاستلام، عشان ما يضيع عليك ولا طلب.</p>
+        <p>نربط متجرك بوسائل الدفع المناسبة لعملائك، عشان ما يضيع عليك ولا طلب.</p>
       </div>
       <div class="feat">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5Z"/><path d="m9 12 2 2 4-4"/></svg></div>
-        <h3>المتجر ملكك مدى الحياة</h3>
-        <p>تدفع مرة وحدة والمتجر ملكك بالكامل، بدون اشتراكات شهرية تثقل عليك.</p>
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 15v-3"/><path d="M12 15V9"/><path d="M16 15v-5"/></svg></div>
+        <h3>لوحة تحكم سهلة</h3>
+        <p>تضيف منتجاتك وتعدّل أسعارك وتتابع طلباتك بنفسك، بدون خبرة تقنية.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="alt" id="works">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">من أعمالنا</span>
+      <h2>متاجر سلّمناها وشغّالة الحين</h2>
+      <p>زور المتاجر بنفسك وشوف الجودة اللي بتاخذها.</p>
+    </div>
+    <div class="works">
+      <a class="work" href="https://saffronqatar.myeasyorders.com/" target="_blank" rel="noopener"><span class="qa">🇶🇦 قطر</span><div class="thumb"><img src="https://files.easy-orders.net/1768727143920406357.webp" alt="زعفران قطر" loading="lazy"></div><div class="info"><h3>زعفران قطر</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://aljandeel.myeasyorders.com/" target="_blank" rel="noopener"><span class="qa">🇶🇦 قطر</span><div class="thumb"><img src="https://files.easy-orders.net/1766849680917842318.webp" alt="الجنديل" loading="lazy"></div><div class="info"><h3>الجنديل</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://al-safi.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1760603705967276956.webp" alt="الصافي" loading="lazy"></div><div class="info"><h3>الصافي</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://elandlus.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1769860857084865900.webp" alt="الأندلس" loading="lazy"></div><div class="info"><h3>الأندلس</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://fasila.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1758377156251565497.webp" alt="فسيلة" loading="lazy"></div><div class="info"><h3>فسيلة</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://bearsstore.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1691086366267782205.jpg" alt="Bears Store" loading="lazy"></div><div class="info"><h3>Bears Store</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://take-and-run-eg.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1768932070328669814.png" alt="Take &amp; Run" loading="lazy"></div><div class="info"><h3>Take &amp; Run</h3><span class="go">زيارة المتجر ↗</span></div></a>
+      <a class="work" href="https://hip-hop.myeasyorders.com/" target="_blank" rel="noopener"><div class="thumb"><img src="https://files.easy-orders.net/1752563622671601184.png" alt="Hip-Hop" loading="lazy"></div><div class="info"><h3>Hip-Hop</h3><span class="go">زيارة المتجر ↗</span></div></a>
     </div>
   </div>
 </section>
 
 <!-- STEPS -->
-<section class="steps-bg">
+<section>
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">خطوات بسيطة</span>
-      <h2>من الطلب لين أول عملية بيع</h2>
+      <h2>من الحجز لين أول طلب</h2>
     </div>
     <div class="steps">
-      <div class="step"><h3>احجز العرض</h3><p>عبّي بياناتك أو كلمنا واتساب، ونتواصل معك على طول.</p></div>
-      <div class="step"><h3>نصمم متجرك</h3><p>نجهز المتجر بهويتك ومنتجاتك ونربطه بوسائل الدفع.</p></div>
-      <div class="step"><h3>ابدأ تبيع</h3><p>نسلمك المتجر جاهز ونعلمك تديره بنفسك بكل سهولة.</p></div>
+      <div class="step"><h3>احجز العرض</h3><p>عبّي الفورم أو كلمنا واتساب، ونتواصل معك على طول.</p></div>
+      <div class="step"><h3>نجهّز متجرك</h3><p>ترسل لنا شعارك ومنتجاتك، ونسلمك المتجر جاهز خلال 48 ساعة.</p></div>
+      <div class="step"><h3>ابدأ تبيع</h3><p>نشرح لك إدارة المتجر خطوة بخطوة، وتبدأ تستقبل الطلبات.</p></div>
     </div>
   </div>
 </section>
 
 <!-- OFFER -->
-<section>
+<section style="padding-top:0">
   <div class="wrap">
     <div class="offer">
       <div>
-        <span class="eyebrow" style="font-weight:800">عرض الجمعة البيضاء</span>
-        <h2>متجرك الكامل بـ 600 ريال بس بدل 999</h2>
-        <p style="opacity:.85;font-size:18px">خصم 40% لفترة محدودة، والعرض ينتهي مع العداد.</p>
+        <span class="eyebrow">عرض الجمعة البيضاء</span>
+        <h2>خصم 40% على متجرك</h2>
+        <p style="opacity:.85;font-size:18px">السعر يرجع 999 ريال أول ما يخلص العداد.</p>
+        <div class="incl">يشمل العرض:</div>
         <ul>
-          <li>تصميم متجر مخصص لنشاطك</li>
-          <li>متجاوب مع الجوال والتابلت واللابتوب</li>
-          <li>ربط بوسائل دفع متعددة</li>
-          <li>ملكية كاملة مدى الحياة</li>
+          <li>تصميم وتجهيز المتجر بالكامل</li>
+          <li>ربط وسائل الدفع</li>
+          <li>شرح إدارة المتجر</li>
+          <li>دعم فني بالعربي</li>
         </ul>
       </div>
       <div class="offer-card">
         <div class="old">999 ر.ق</div>
         <div class="now">600 <small>ر.ق</small></div>
-        <div class="note">دفعة وحدة، بدون رسوم شهرية</div>
-        <div class="countdown" id="countdown">
+        <div class="pnote">دفعة وحدة فقط</div>
+        <div class="countdown">
           <div class="cd"><b id="cd-d">00</b><small>يوم</small></div>
           <div class="cd"><b id="cd-h">00</b><small>ساعة</small></div>
           <div class="cd"><b id="cd-m">00</b><small>دقيقة</small></div>
@@ -319,40 +405,48 @@
 </section>
 
 <!-- ORDER FORM -->
-<section id="order" class="steps-bg">
+<section id="order" class="alt">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">احجز متجرك</span>
       <h2>ثبّت سعر العرض الحين</h2>
-      <p>عبّي بياناتك وبنكلمك على الواتساب خلال وقت قصير.</p>
+      <p>عبّي بياناتك ونتواصل معك على الواتساب.</p>
     </div>
-    <form class="form-box" id="orderForm">
-      <div class="field">
-        <label for="name">الاسم</label>
-        <input id="name" name="name" required placeholder="اسمك الكريم">
-      </div>
-      <div class="field">
-        <label for="phone">رقم الجوال</label>
-        <div class="phone-wrap">
-          <span>+974</span>
-          <input id="phone" name="phone" type="tel" inputmode="numeric" required pattern="[0-9]{8}" maxlength="8" placeholder="XXXXXXXX">
+    <div class="form-box" id="formBox">
+      <form id="orderForm">
+        <div class="field">
+          <label for="name">الاسم</label>
+          <input id="name" name="name" required placeholder="اسمك الكريم">
         </div>
+        <div class="field">
+          <label for="phone">رقم الجوال</label>
+          <div class="phone-wrap">
+            <span>+974</span>
+            <input id="phone" name="phone" type="tel" inputmode="numeric" required pattern="[0-9]{8}" maxlength="8" placeholder="XXXXXXXX">
+          </div>
+        </div>
+        <div class="field">
+          <label for="type">نوع نشاطك</label>
+          <select id="type" name="type" required>
+            <option value="">اختر نوع النشاط</option>
+            <option>ملابس وعبايات</option>
+            <option>عطور وبخور</option>
+            <option>إلكترونيات وإكسسوارات</option>
+            <option>مأكولات وحلويات</option>
+            <option>تجميل وعناية</option>
+            <option>نشاط آخر</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">احجز متجري بـ 600 ريال</button>
+        <p class="form-note">بياناتك محفوظة وما نشاركها مع أي أحد.</p>
+      </form>
+      <div class="thanks">
+        <div class="ok">✓</div>
+        <h3>وصلنا طلبك!</h3>
+        <p>بنتواصل معك على الواتساب في أقرب وقت. لو ما انفتح الواتساب، اضغط الزر تحت.</p>
+        <a href="#" class="btn btn-primary" id="thanksWa" target="_blank" rel="noopener">افتح الواتساب</a>
       </div>
-      <div class="field">
-        <label for="type">نوع نشاطك</label>
-        <select id="type" name="type" required>
-          <option value="">اختر نوع النشاط</option>
-          <option>ملابس وعبايات</option>
-          <option>عطور وبخور</option>
-          <option>إلكترونيات وإكسسوارات</option>
-          <option>مأكولات وحلويات</option>
-          <option>تجميل وعناية</option>
-          <option>نشاط آخر</option>
-        </select>
-      </div>
-      <button type="submit" class="btn btn-primary">احجز متجري بـ 600 ريال</button>
-      <p class="form-note">بياناتك محفوظة وما نشاركها مع أي أحد.</p>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -365,24 +459,28 @@
     </div>
     <div class="faq">
       <details open>
-        <summary>هل في اشتراك شهري بعد الدفع؟</summary>
-        <p>لا، تدفع مرة وحدة والمتجر يصير ملكك مدى الحياة.</p>
+        <summary>هل في أي رسوم بعد ما أدفع؟</summary>
+        <p>لا، تدفع 600 ريال مرة وحدة وما في اشتراك شهري ولا سنوي على المتجر. الشي الوحيد هو رسوم بوابة الدفع على كل عملية، وهذي يحددها مزود الدفع نفسه.</p>
       </details>
       <details>
-        <summary>إيش وسائل الدفع اللي يدعمها المتجر؟</summary>
-        <p>المتجر مربوط بوسائل دفع متعددة مثل بطاقات الائتمان وآبل باي والدفع عند الاستلام، ونحدد معك الأنسب لنشاطك.</p>
+        <summary>كم ياخذ تجهيز المتجر؟</summary>
+        <p>48 ساعة من استلام شعارك وبيانات منتجاتك.</p>
       </details>
       <details>
-        <summary>هل المتجر يشتغل على الجوال؟</summary>
-        <p>أكيد، المتجر متجاوب مع جميع الأجهزة: الجوال والتابلت واللابتوب.</p>
+        <summary>إيش أحتاج أجهّز قبل ما نبدأ؟</summary>
+        <p>شعار نشاطك، وصور المنتجات مع أسعارها ووصف بسيط لكل منتج.</p>
       </details>
       <details>
-        <summary>هل التصميم قالب جاهز؟</summary>
-        <p>لا، المتجر مخصص لك ولنشاطك وبهوية علامتك التجارية.</p>
+        <summary>أقدر أضيف منتجات وأعدّل بنفسي؟</summary>
+        <p>أكيد، تتحكم في كل شي من لوحة التحكم، ولو احتجت مساعدة فريق الدعم معك.</p>
+      </details>
+      <details>
+        <summary>إيش وسائل الدفع المتاحة؟</summary>
+        <p>نربط متجرك بأكثر من وسيلة دفع، ونختار معك الأنسب لعملائك.</p>
       </details>
       <details>
         <summary>إلى متى العرض؟</summary>
-        <p>عرض الجمعة البيضاء لفترة محدودة، وبعدها يرجع السعر 999 ريال.</p>
+        <p>لين 30 نوفمبر، وبعدها يرجع السعر 999 ريال.</p>
       </details>
     </div>
   </div>
@@ -391,8 +489,8 @@
 <!-- FINAL CTA -->
 <div class="final">
   <div class="wrap">
-    <h2>لا تفوّت خصم الـ 40%</h2>
-    <p>متجرك الاحترافي بـ 600 ريال بدل 999، لفترة محدودة.</p>
+    <h2>متجرك ممكن يكون جاهز بعد يومين</h2>
+    <p>احجز قبل نهاية العرض وثبّت السعر قبل ما يرجع 999.</p>
     <div class="cta-row" style="justify-content:center">
       <a href="#order" class="btn btn-primary">احجز متجرك الحين</a>
       <a href="#" class="btn btn-ghost js-wa">كلمنا واتساب</a>
@@ -402,12 +500,10 @@
 
 <footer>© <span id="yr"></span> بارك — تصميم المتاجر الإلكترونية. جميع الحقوق محفوظة</footer>
 
-<!-- Floating WhatsApp -->
 <a href="#" class="wa-float js-wa" aria-label="واتساب">
   <svg viewBox="0 0 32 32"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.3.6 4.5 1.8 6.4L3 29l7-1.8c1.8 1 3.9 1.5 6 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3Zm0 23.4c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.6 0-5.9 4.8-10.6 10.7-10.6s10.7 4.8 10.7 10.6-4.8 10.6-10.7 10.6Zm5.9-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg>
 </a>
 
-<!-- Mobile sticky bar -->
 <div class="m-bar">
   <div class="p"><s>999 ر.ق</s>600 ر.ق</div>
   <a href="#order" class="btn btn-primary btn-sm">احجز بخصم 40%</a>
@@ -420,19 +516,18 @@
   const SHEET_URL = "https://script.google.com/macros/s/AKfycbwPHG4KeuK9zhdZ8TpsVPASuW5zhk6PyceAIAZir3oXa6Wqs51xHRxU3gsC3xwwLvmZ/exec"; // Google Apps Script لتسجيل الطلبات في الشيت
   // ================================
 
-  const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-  const defaultMsg = "السلام عليكم، أبي أستفسر عن عرض المتجر الإلكتروني بـ 600 ريال (الجمعة البيضاء)";
-  document.querySelectorAll('.js-wa').forEach(a => { a.href = waLink(defaultMsg); a.target = "_blank"; a.rel = "noopener"; });
+  function waLink(msg){ return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg); }
+  var defaultMsg = "السلام عليكم، أبي أستفسر عن عرض المتجر الإلكتروني بـ 600 ريال (الجمعة البيضاء)";
+  document.querySelectorAll('.js-wa').forEach(function(a){ a.href = waLink(defaultMsg); a.target = "_blank"; a.rel = "noopener"; });
 
-  // Countdown
-  const end = new Date(OFFER_END).getTime();
-  const pad = n => String(n).padStart(2,'0');
+  var end = new Date(OFFER_END).getTime();
+  function pad(n){ return String(n).padStart(2,'0'); }
   function tick(){
-    let diff = Math.max(0, end - Date.now());
-    const d = Math.floor(diff/864e5); diff %= 864e5;
-    const h = Math.floor(diff/36e5);  diff %= 36e5;
-    const m = Math.floor(diff/6e4);   diff %= 6e4;
-    const s = Math.floor(diff/1e3);
+    var diff = Math.max(0, end - Date.now());
+    var d = Math.floor(diff/864e5); diff %= 864e5;
+    var h = Math.floor(diff/36e5);  diff %= 36e5;
+    var m = Math.floor(diff/6e4);   diff %= 6e4;
+    var s = Math.floor(diff/1e3);
     document.getElementById('cd-d').textContent = pad(d);
     document.getElementById('cd-h').textContent = pad(h);
     document.getElementById('cd-m').textContent = pad(m);
@@ -440,16 +535,19 @@
   }
   tick(); setInterval(tick, 1000);
 
-  // Form → WhatsApp
-  document.getElementById('orderForm').addEventListener('submit', e => {
+  document.getElementById('orderForm').addEventListener('submit', function(e){
     e.preventDefault();
-    const f = e.target;
+    var f = e.target;
+    var phone = '+974' + f.phone.value;
     try {
       fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true,
-        body: new URLSearchParams({ name: f.name.value, phone: '+974' + f.phone.value, type: f.type.value, source: location.hostname }) });
+        body: new URLSearchParams({ name: f.name.value, phone: phone, type: f.type.value, source: location.hostname }) });
     } catch (_) {}
-    const msg = `السلام عليكم، أبي أحجز عرض المتجر الإلكتروني بـ 600 ريال\nالاسم: ${f.name.value}\nالجوال: +974${f.phone.value}\nنوع النشاط: ${f.type.value}`;
-    window.open(waLink(msg), '_blank');
+    var msg = "السلام عليكم، أبي أحجز عرض المتجر الإلكتروني بـ 600 ريال\nالاسم: " + f.name.value + "\nالجوال: " + phone + "\nنوع النشاط: " + f.type.value;
+    var link = waLink(msg);
+    document.getElementById('thanksWa').href = link;
+    document.getElementById('formBox').classList.add('done');
+    window.open(link, '_blank');
   });
 
   document.getElementById('yr').textContent = new Date().getFullYear();
