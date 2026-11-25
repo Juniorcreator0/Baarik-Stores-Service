@@ -225,7 +225,8 @@
     .m-bar .p s{color:var(--muted);font-weight:500;font-size:13px;display:block}
     body{padding-bottom:72px}
   }
-  .prod .img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:10px}
+  .prod .img:has(img){background:#fff !important;border:1px solid var(--line)}
+  .prod .img img{width:100%;height:100%;object-fit:contain;padding:6px;display:block;border-radius:10px}
   .prod .nm{font-size:13px;font-weight:700;color:var(--ink);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 </head>
