@@ -95,18 +95,73 @@
   h2{font-size:clamp(26px,3.6vw,38px);font-weight:900;line-height:1.35;margin-bottom:12px}
   .sec-head p{color:var(--muted);font-size:18px}
 
-  /* Compare */
-  .compare{max-width:900px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(1,69,67,.3)}
-  .compare table{width:100%;border-collapse:collapse;font-size:16px}
-  .compare th,.compare td{padding:16px 18px;text-align:center;border-bottom:1px solid var(--line)}
-  .compare th{background:#F5FAF9;font-weight:800;font-size:15px;color:var(--muted)}
-  .compare td:first-child,.compare th:first-child{text-align:right}
-  .compare td:first-child b{display:block;font-size:17px}
-  .compare td:first-child small{color:var(--muted);font-size:13px}
-  .compare .cost{font-weight:800;color:#B42318}
-  .compare tr.us td{background:var(--maroon);color:#fff;border-bottom:0}
-  .compare tr.us td:first-child small{color:#F3D9E0}
-  .compare tr.us .cost{color:var(--gold);font-size:19px}
+  /* Compare v3 */
+  .cmp{max-width:920px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 30px 60px -40px rgba(1,69,67,.3)}
+  .cmp-row{display:grid;grid-template-columns:1.35fr 1fr .9fr 1.6fr;align-items:center;gap:14px;padding:16px 22px;border-bottom:1px solid #F3D6D2}
+  .cmp-head{background:#F5FAF9;font-weight:800;font-size:14px;color:var(--muted);padding:13px 22px;border-bottom:1px solid var(--line)}
+  .cmp-head span:not(:first-child){text-align:center}
+  .cmp-brand{display:flex;align-items:center;gap:12px}
+  .cmp-logo{width:46px;height:46px;flex:0 0 46px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden}
+  .cmp-logo img{width:30px;height:30px;object-fit:contain}
+  .cmp-brand b{display:block;font-size:17px;line-height:1.2}
+  .cmp-brand small{font-size:12.5px}
+  .cmp-sub{text-align:center}
+  .cmp-year{text-align:center;font-weight:700}
+  .cmp-3y{display:flex;flex-direction:column;gap:7px}
+  .cmp-3y b{font-size:18px;font-weight:900}
+  .cmp-bar{height:10px;border-radius:99px;overflow:hidden}
+  .cmp-bar i{display:block;height:100%;width:0;border-radius:99px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+  .cmp.in .cmp-bar i{width:var(--w)}
+  /* المنافسين: لون باهت مزعج */
+  .cmp-row.comp{background:repeating-linear-gradient(-45deg,#FFF5F3 0 10px,#FCE9E6 10px 20px);color:#8A4B44}
+  .cmp-row.comp .cmp-logo{filter:grayscale(1);opacity:.6;border-color:#F0CFCA}
+  .cmp-row.comp .cmp-brand small{color:#B88880}
+  .cmp-row.comp .cmp-year{color:#9B514A}
+  .cmp-row.comp .cmp-3y b{color:#C0281C}
+  .cmp-row.comp .cmp-bar{background:#F6D9D5}
+  .cmp-row.comp .cmp-bar i{background:linear-gradient(90deg,#F97066,#C0281C)}
+  .renew{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid #F3C4BE;color:#C0281C;font-weight:700;font-size:14px;padding:6px 11px;border-radius:999px;white-space:nowrap}
+  .renew svg{width:15px;height:15px;flex:0 0 15px}
+  /* بارك: ألوان الهوية */
+  .cmp-row.us{position:relative;background:linear-gradient(120deg,var(--maroon-dark),var(--maroon));color:#fff;border:0;padding:26px 22px;box-shadow:inset 0 0 0 3px var(--gold)}
+  .cmp-row.us .cmp-logo{border:2px solid var(--gold);width:52px;height:52px;flex-basis:52px}
+  .cmp-row.us .cmp-logo img{width:100%;height:100%;object-fit:cover}
+  .cmp-row.us .cmp-brand b{font-size:20px}
+  .cmp-row.us .cmp-brand small{color:#CFE7E5}
+  .once{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--maroon-dark);font-weight:800;font-size:14px;padding:7px 12px;border-radius:999px;white-space:nowrap}
+  .once svg{width:15px;height:15px}
+  .cmp-row.us .cmp-year{color:#fff;font-size:17px}
+  .cmp-row.us .cmp-3y b{color:var(--gold);font-size:24px}
+  .cmp-row.us .cmp-bar{background:rgba(255,255,255,.18)}
+  .cmp-row.us .cmp-bar i{background:var(--gold)}
+  .cmp-pick{position:absolute;top:0;left:22px;background:var(--gold);color:var(--maroon-dark);font-size:12.5px;font-weight:900;padding:5px 12px 6px;border-radius:0 0 10px 10px}
+  .cmp-forever{display:block;font-size:12.5px;color:#CFE7E5;font-weight:600}
+  @media (max-width:700px){
+    .cmp-head{display:none}
+    .cmp-row{grid-template-columns:1fr auto;grid-template-areas:"brand sub" "bar bar";gap:10px 12px;padding:16px}
+    .cmp-brand{grid-area:brand}.cmp-sub{grid-area:sub;text-align:left}.cmp-year{display:none}
+    .cmp-3y{grid-area:bar;flex-direction:row-reverse;align-items:center;gap:12px}.cmp-3y .cmp-bar{flex:1}
+    .cmp-3y b{font-size:16px;white-space:nowrap}
+    .cmp-3y b::before{content:"3 سنين: ";font-weight:600;font-size:12.5px;opacity:.75}
+    .cmp-row.us{padding:32px 16px 18px}.cmp-row.us .cmp-3y b{font-size:19px}
+    .renew,.once{font-size:12.5px;padding:5px 9px}
+    .cmp-logo{width:40px;height:40px;flex-basis:40px}.cmp-logo img{width:26px;height:26px}
+  }
+  /* Currency switcher */
+  .nav-end{display:flex;align-items:center;gap:10px}
+  .cur{position:relative}
+  .cur-btn{display:flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font:inherit;font-weight:800;font-size:14px;color:var(--maroon-dark);cursor:pointer}
+  .fl{width:22px;height:15px;border-radius:3px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.08);flex:0 0 22px}
+  .cur-btn svg{width:12px;height:12px}
+  .cur-menu{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 40px -20px rgba(1,69,67,.35);padding:6px;min-width:200px;display:none;z-index:90}
+  .cur.open .cur-menu{display:block}
+  .cur-opt{display:flex;align-items:center;gap:10px;width:100%;border:0;background:none;padding:9px 10px;border-radius:10px;font:inherit;font-size:14.5px;font-weight:700;cursor:pointer;color:var(--ink)}
+  .cur-opt small{margin-inline-start:auto;color:var(--muted);font-weight:700}
+  .cur-opt:hover,.cur-opt.on{background:var(--maroon-soft)}
+  .cur-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;padding:28px 20px 10px}
+  .cur-bottom>span{font-weight:800;color:var(--muted);margin-inline-end:4px}
+  .cur-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;color:var(--ink)}
+  .cur-pill.on{background:var(--maroon);border-color:var(--maroon);color:#fff}
   .save-box{max-width:900px;margin:22px auto 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#FBF6E6;border:1px dashed var(--gold);border-radius:18px;padding:18px 24px}
   .save-box p{font-size:19px;font-weight:800}
   .save-box p span{color:var(--maroon)}
@@ -237,7 +292,10 @@
 <header>
   <div class="wrap nav">
     <a href="#" class="logo"><img src="613159804_122111070999158646_2654228719533844693_n.jpg" alt="مؤسسة بارك"><small>تصميم المتاجر الإلكترونية</small></a>
-    <a href="#order" class="btn btn-primary btn-sm">احجز متجرك الحين</a>
+    <div class="nav-end">
+      <div class="cur" id="curTop"><button type="button" class="cur-btn" aria-label="اختر العملة"><img class="fl" src="https://flagcdn.com/w40/qa.png" alt="" width="22" height="15"><b>QAR</b><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg></button><div class="cur-menu"><button type="button" class="cur-opt" data-k="QA"><img class="fl" src="https://flagcdn.com/w40/qa.png" alt="" width="22" height="15">قطر<small>QAR</small></button><button type="button" class="cur-opt" data-k="SA"><img class="fl" src="https://flagcdn.com/w40/sa.png" alt="" width="22" height="15">السعودية<small>SAR</small></button><button type="button" class="cur-opt" data-k="AE"><img class="fl" src="https://flagcdn.com/w40/ae.png" alt="" width="22" height="15">الإمارات<small>AED</small></button><button type="button" class="cur-opt" data-k="KW"><img class="fl" src="https://flagcdn.com/w40/kw.png" alt="" width="22" height="15">الكويت<small>KWD</small></button><button type="button" class="cur-opt" data-k="BH"><img class="fl" src="https://flagcdn.com/w40/bh.png" alt="" width="22" height="15">البحرين<small>BHD</small></button><button type="button" class="cur-opt" data-k="OM"><img class="fl" src="https://flagcdn.com/w40/om.png" alt="" width="22" height="15">عُمان<small>OMR</small></button></div></div>
+      <a href="#order" class="btn btn-primary btn-sm">احجز متجرك الحين</a>
+    </div>
   </div>
 </header>
 
@@ -288,22 +346,40 @@
       <h2>كم بتدفع للمنصات خلال 3 سنين؟</h2>
       <p>المنصات المشهورة تحاسبك كل شهر طول ما متجرك شغّال، ومع بارك تدفع مرة وحدة وبس.</p>
     </div>
-    <div class="compare">
-      <div class="table-scroll">
-        <table>
-          <thead>
-            <tr><th>المنصة</th><th>الاشتراك</th><th>خلال سنة</th><th>خلال 3 سنين</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><b>Shopify</b><small>باقة Basic</small></td><td>≈ 87 ر.ق / شهر</td><td class="cost">≈ 1,050 ر.ق</td><td class="cost">≈ 3,150 ر.ق</td></tr>
-            <tr><td><b>Wix</b><small>باقة Core</small></td><td>≈ 106 ر.ق / شهر</td><td class="cost">≈ 1,270 ر.ق</td><td class="cost">≈ 3,800 ر.ق</td></tr>
-            <tr><td><b>زد Zid</b><small>باقة Lite</small></td><td>≈ 96 ر.ق / شهر</td><td class="cost">≈ 1,150 ر.ق</td><td class="cost">≈ 3,460 ر.ق</td></tr>
-            <tr><td><b>سلة Salla</b><small>باقة سلة بلس</small></td><td>≈ 960 ر.ق / سنة</td><td class="cost">≈ 960 ر.ق</td><td class="cost">≈ 2,880 ر.ق</td></tr>
-            <tr class="us"><td><b>بارك</b><small>عرض الجمعة البيضاء</small></td><td>600 ر.ق مرة وحدة</td><td class="cost">600 ر.ق</td><td class="cost">600 ر.ق</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="cmp" id="cmpBox">
+    <div class="cmp-row cmp-head"><span>المنصة</span><span>الاشتراك</span><span>خلال سنة</span><span>خلال 3 سنين</span></div>
+    <div class="cmp-row comp">
+      <div class="cmp-brand"><span class="cmp-logo"><img src="https://www.google.com/s2/favicons?domain=zid.sa&sz=128" alt="زد Zid" loading="lazy"></span><div><b>زد Zid</b><small>باقة Lite</small></div></div>
+      <div class="cmp-sub"><span class="renew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>96 ر.ق / شهر</span></div>
+      <div class="cmp-year">≈ 1,150 ر.ق</div>
+      <div class="cmp-3y"><b>≈ 3,460 ر.ق</b><span class="cmp-bar"><i style="--w:91%"></i></span></div>
     </div>
+    <div class="cmp-row comp">
+      <div class="cmp-brand"><span class="cmp-logo"><img src="https://www.google.com/s2/favicons?domain=salla.sa&sz=128" alt="سلة Salla" loading="lazy"></span><div><b>سلة Salla</b><small>باقة سلة بلس</small></div></div>
+      <div class="cmp-sub"><span class="renew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>960 ر.ق / سنة</span></div>
+      <div class="cmp-year">≈ 960 ر.ق</div>
+      <div class="cmp-3y"><b>≈ 2,880 ر.ق</b><span class="cmp-bar"><i style="--w:76%"></i></span></div>
+    </div>
+    <div class="cmp-row comp">
+      <div class="cmp-brand"><span class="cmp-logo"><img src="https://www.google.com/s2/favicons?domain=shopify.com&sz=128" alt="Shopify" loading="lazy"></span><div><b>Shopify</b><small>باقة Basic</small></div></div>
+      <div class="cmp-sub"><span class="renew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>87 ر.ق / شهر</span></div>
+      <div class="cmp-year">≈ 1,050 ر.ق</div>
+      <div class="cmp-3y"><b>≈ 3,150 ر.ق</b><span class="cmp-bar"><i style="--w:83%"></i></span></div>
+    </div>
+    <div class="cmp-row comp">
+      <div class="cmp-brand"><span class="cmp-logo"><img src="https://www.google.com/s2/favicons?domain=wix.com&sz=128" alt="Wix" loading="lazy"></span><div><b>Wix</b><small>باقة Core</small></div></div>
+      <div class="cmp-sub"><span class="renew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>106 ر.ق / شهر</span></div>
+      <div class="cmp-year">≈ 1,270 ر.ق</div>
+      <div class="cmp-3y"><b>≈ 3,800 ر.ق</b><span class="cmp-bar"><i style="--w:100%"></i></span></div>
+    </div>
+    <div class="cmp-row us">
+      <span class="cmp-pick">✓ اختيارك الصح</span>
+      <div class="cmp-brand"><span class="cmp-logo"><img src="613159804_122111070999158646_2654228719533844693_n.jpg" alt="بارك"></span><div><b>بارك</b><small>عرض الجمعة البيضاء</small></div></div>
+      <div class="cmp-sub"><span class="once"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>600 ر.ق مرة وحدة</span></div>
+      <div class="cmp-year">600 ر.ق</div>
+      <div class="cmp-3y"><b>600 ر.ق</b><span class="cmp-bar"><i style="--w:16%"></i></span><span class="cmp-forever">والسنين اللي بعدها: 0 ر.ق — المتجر ملكك للأبد</span></div>
+    </div>
+  </div>
     <div class="save-box">
       <p>توفّر <span>أكثر من 2,000 ريال</span> خلال 3 سنين، وكل سنة بعدها تكلفتها صفر.</p>
       <a href="#order" class="btn btn-primary btn-sm">احجز بسعر العرض</a>
@@ -517,6 +593,8 @@
   </div>
 </div>
 
+<div class="cur-bottom" id="curBottom"><span>اعرض الأسعار بعملة:</span><button type="button" class="cur-pill" data-k="QA"><img class="fl" src="https://flagcdn.com/w40/qa.png" alt="" width="22" height="15"> QAR</button><button type="button" class="cur-pill" data-k="SA"><img class="fl" src="https://flagcdn.com/w40/sa.png" alt="" width="22" height="15"> SAR</button><button type="button" class="cur-pill" data-k="AE"><img class="fl" src="https://flagcdn.com/w40/ae.png" alt="" width="22" height="15"> AED</button><button type="button" class="cur-pill" data-k="KW"><img class="fl" src="https://flagcdn.com/w40/kw.png" alt="" width="22" height="15"> KWD</button><button type="button" class="cur-pill" data-k="BH"><img class="fl" src="https://flagcdn.com/w40/bh.png" alt="" width="22" height="15"> BHD</button><button type="button" class="cur-pill" data-k="OM"><img class="fl" src="https://flagcdn.com/w40/om.png" alt="" width="22" height="15"> OMR</button></div>
+
 <footer><img src="613159804_122111070999158646_2654228719533844693_n.jpg" alt="مؤسسة بارك" style="width:56px;height:56px;border-radius:14px;margin:0 auto 10px">© <span id="yr"></span> بارك — تصميم المتاجر الإلكترونية. جميع الحقوق محفوظة</footer>
 
 <a href="#" class="wa-float js-wa" aria-label="واتساب">
@@ -529,6 +607,77 @@
 </div>
 
 <script>
+/* ===== العملة واللهجة حسب الدولة =====
+   p = سعر العرض ، o = السعر قبل الخصم (عدّلهم براحتك لكل دولة)
+   r = سعر التحويل من الريال القطري (لأسعار المنصات المنافسة) ، d = تعديلات اللهجة */
+(function(){
+  var C={
+    QA:{cc:'+974',code:'QAR',sym:'ر.ق',w:'ريال',adj:'قطري',full:'الريال القطري',r:1,p:600,o:999,d:[]},
+    SA:{cc:'+966',code:'SAR',sym:'ر.س',w:'ريال',adj:'سعودي',full:'الريال السعودي',r:1.03,p:620,o:1030,
+        d:[['إيش','وش'],['مع أي أحد','مع أحد']]},
+    AE:{cc:'+971',code:'AED',sym:'د.إ',w:'درهم',adj:'إماراتي',full:'الدرهم الإماراتي',r:1.009,p:600,o:1000,
+        d:[['إيش','شو'],['رقم الجوال','رقم الموبايل'],['على الجوال','على الموبايل'],['من الجوال','من الموبايل'],['مو قالب','مب قالب'],['مع أي أحد','مع حد']]},
+    KW:{cc:'+965',code:'KWD',sym:'د.ك',w:'دينار',adj:'كويتي',full:'الدينار الكويتي',r:0.0843,p:50,o:84,
+        d:[['إيش','شنو'],['كم بتدفع','جم بتدفع'],['كم ياخذ','جم ياخذ'],['رقم الجوال','رقم التلفون'],['مع أي أحد','مع أحد']]},
+    BH:{cc:'+973',code:'BHD',sym:'د.ب',w:'دينار',adj:'بحريني',full:'الدينار البحريني',r:0.1033,p:62,o:103,
+        d:[['إيش','شنو'],['كم بتدفع','جم بتدفع'],['كم ياخذ','جم ياخذ'],['رقم الجوال','رقم الموبايل']]},
+    OM:{cc:'+968',code:'OMR',sym:'ر.ع',w:'ريال',adj:'عماني',full:'الريال العماني',r:0.1056,p:63,o:105,
+        d:[['إيش','شو'],['رقم الجوال','رقم الهاتف']]}
+  };
+  var TZ={'Asia/Qatar':'QA','Asia/Riyadh':'SA','Asia/Dubai':'AE','Asia/Kuwait':'KW','Asia/Bahrain':'BH','Asia/Muscat':'OM'};
+  var cur='QA', nodes=[];
+  function fmt(v){return Number(v).toLocaleString('en-US',{maximumFractionDigits:1});}
+  function num(t){return parseFloat(String(t).replace(/,/g,''));}
+  function conv(q){
+    var c=C[cur]; if(cur==='QA') return q;
+    if(q===600) return c.p; if(q===999) return c.o; if(q===399) return c.o-c.p;
+    if(q===2000){var s=conv(2880)-c.p, st=c.r<0.2?10:100; return Math.floor(s/st)*st;}
+    var v=q*c.r;
+    if(c.r<0.2) return v>=20?Math.round(v):Math.round(v*10)/10;
+    return v>=500?Math.round(v/10)*10:Math.round(v);
+  }
+  function tr(t){
+    var c=C[cur];
+    c.d.forEach(function(p){t=t.split(p[0]).join(p[1]);});
+    t=t.replace('للريال القطري','إلى '+c.full);
+    t=t.replace(/(\d[\d,]*(?:\.\d+)?)(\s*)(ر\.ق|ريال)/g,function(m,n,s,u){return fmt(conv(num(n)))+s+(u==='ريال'?c.w:c.sym);});
+    t=t.replace(/يرجع (\d[\d,]*)(?![\d,]*\s*(ر\.|ريال|درهم|دينار|د\.))/,function(m,n){return 'يرجع '+fmt(conv(num(n)));});
+    var tt=t.trim();
+    if(tt==='600'||tt==='999') t=t.replace(tt,fmt(conv(+tt)));
+    else if(tt==='ر.ق') t=t.replace(tt,c.sym);
+    return t;
+  }
+  window.bkPrice=function(){var c=C[cur];return fmt(c.p)+' '+c.w+' '+c.adj;};
+  var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  while(w.nextNode()){var n=w.currentNode,pe=n.parentElement;
+    if(!n.nodeValue.trim()||!pe||/^(SCRIPT|STYLE|OPTION)$/.test(pe.tagName)||pe.closest('.cur,.cur-bottom')) continue;
+    nodes.push({n:n,o:n.nodeValue});}
+  var cc=document.getElementById('cc');
+  function apply(k,save){
+    if(!C[k]) k='QA'; cur=k; var c=C[k];
+    nodes.forEach(function(x){x.n.nodeValue=tr(x.o);});
+    document.querySelectorAll('[data-k]').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-k')===k);});
+    var t=document.querySelector('#curTop .cur-btn'); if(t){t.querySelector('.fl').src='https://flagcdn.com/w40/'+k.toLowerCase()+'.png';t.querySelector('b').textContent=c.code;}
+    document.documentElement.setAttribute('data-country',k);
+    if(cc&&cc.value!==c.cc){cc.value=c.cc;cc.dispatchEvent(new Event('change'));}
+    var msg='السلام عليكم، أبي أستفسر عن عرض المتجر الإلكتروني بـ '+window.bkPrice()+' (الجمعة البيضاء)';
+    document.querySelectorAll('.js-wa').forEach(function(a){if(/text=/.test(a.href)) a.href=a.href.replace(/text=.*$/,'text='+encodeURIComponent(msg));});
+    if(save){try{localStorage.setItem('bk_country',k);}catch(e){}}
+  }
+  var start='QA';
+  try{start=localStorage.getItem('bk_country')||TZ[Intl.DateTimeFormat().resolvedOptions().timeZone]||'QA';}catch(e){}
+  apply(start,false);
+  var top=document.getElementById('curTop');
+  if(top){top.querySelector('.cur-btn').addEventListener('click',function(e){e.stopPropagation();top.classList.toggle('open');});
+    document.addEventListener('click',function(){top.classList.remove('open');});}
+  document.querySelectorAll('.cur-opt,.cur-pill').forEach(function(b){b.addEventListener('click',function(){apply(b.getAttribute('data-k'),true);if(top)top.classList.remove('open');});});
+  if(cc) cc.addEventListener('change',function(e){if(!e.isTrusted)return;for(var k in C){if(C[k].cc===cc.value&&k!==cur){apply(k,true);break;}}});
+  var box=document.getElementById('cmpBox');
+  if(box){if(!('IntersectionObserver' in window)) box.classList.add('in');
+    else{var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){box.classList.add('in');io.disconnect();}},{threshold:.25});io.observe(box);}}
+})();
+</script>
+<script>
   // ===== الإعدادات — عدّل هنا =====
   const WHATSAPP_NUMBER = "97439986483";            // رقم الواتساب بالصيغة الدولية بدون +
   const OFFER_END = "2026-11-30T23:59:59+03:00";    // نهاية العرض بتوقيت الدوحة
@@ -536,7 +685,7 @@
   // ================================
 
   function waLink(msg){ return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg); }
-  var defaultMsg = "السلام عليكم، أبي أستفسر عن عرض المتجر الإلكتروني بـ 600 ريال (الجمعة البيضاء)";
+  var defaultMsg = "السلام عليكم، أبي أستفسر عن عرض المتجر الإلكتروني بـ " + (window.bkPrice ? bkPrice() : "600 ريال") + " (الجمعة البيضاء)";
   document.querySelectorAll('.js-wa').forEach(function(a){ a.href = waLink(defaultMsg); a.target = "_blank"; a.rel = "noopener"; });
 
   var end = new Date(OFFER_END).getTime();
@@ -572,7 +721,7 @@
       fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true,
         body: new URLSearchParams({ name: f.name.value, phone: phone, type: f.type.value, source: location.hostname }) });
     } catch (_) {}
-    var msg = "السلام عليكم، أبي أحجز عرض المتجر الإلكتروني بـ 600 ريال\nالاسم: " + f.name.value + "\nالجوال: " + phone + "\nنوع النشاط: " + f.type.value;
+    var msg = "السلام عليكم، أبي أحجز عرض المتجر الإلكتروني بـ " + (window.bkPrice ? bkPrice() : "600 ريال") + "\nالاسم: " + f.name.value + "\nالجوال: " + phone + "\nنوع النشاط: " + f.type.value;
     var link = waLink(msg);
     document.getElementById('thanksWa').href = link;
     document.getElementById('formBox').classList.add('done');
