@@ -168,8 +168,8 @@
   .field input,.field select{width:100%;font-family:inherit;font-size:16px;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s}
   .field input:focus,.field select:focus{border-color:var(--maroon)}
   .phone-wrap{display:flex;gap:8px;direction:ltr}
-  .phone-wrap span{display:flex;align-items:center;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;font-weight:700;color:var(--muted)}
-  .phone-wrap input{text-align:left}
+  .phone-wrap select{width:auto;flex:0 0 auto;padding:13px 8px;font-weight:700;color:var(--ink);direction:ltr;cursor:pointer}
+  .phone-wrap input{flex:1;min-width:0;text-align:left}
   .form-box .btn{width:100%;margin-top:8px}
   .form-note{text-align:center;color:var(--muted);font-size:14px;margin-top:12px}
   .thanks{display:none;text-align:center;padding:10px 0}
@@ -426,7 +426,14 @@
         <div class="field">
           <label for="phone">رقم الجوال</label>
           <div class="phone-wrap">
-            <span>+974</span>
+            <select id="cc" name="cc" aria-label="مفتاح الدولة">
+              <option value="+966" data-len="9">🇸🇦 +966</option>
+              <option value="+974" data-len="8" selected>🇶🇦 +974</option>
+              <option value="+971" data-len="9">🇦🇪 +971</option>
+              <option value="+965" data-len="8">🇰🇼 +965</option>
+              <option value="+973" data-len="8">🇧🇭 +973</option>
+              <option value="+968" data-len="8">🇴🇲 +968</option>
+            </select>
             <input id="phone" name="phone" type="tel" inputmode="numeric" required pattern="[0-9]{8}" maxlength="8" placeholder="XXXXXXXX">
           </div>
         </div>
@@ -540,10 +547,20 @@
   }
   tick(); setInterval(tick, 1000);
 
+  // مفتاح الدولة: عدد أرقام الجوال حسب الدولة
+  (function(){
+    var cc = document.getElementById('cc'), ph = document.getElementById('phone');
+    function setLen(){
+      var n = cc.options[cc.selectedIndex].getAttribute('data-len');
+      ph.maxLength = n; ph.pattern = '[0-9]{' + n + '}'; ph.placeholder = 'X'.repeat(n);
+    }
+    cc.addEventListener('change', setLen); setLen();
+  })();
+
   document.getElementById('orderForm').addEventListener('submit', function(e){
     e.preventDefault();
     var f = e.target;
-    var phone = '+974' + f.phone.value;
+    var phone = f.cc.value + f.phone.value;
     try {
       fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true,
         body: new URLSearchParams({ name: f.name.value, phone: phone, type: f.type.value, source: location.hostname }) });
